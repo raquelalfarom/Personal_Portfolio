@@ -9,6 +9,15 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>My Portafolio Website</title>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("ej0idA-IsQHRF3B5c");
+    </script>
   </head>
   <body>
     <header>
@@ -171,35 +180,21 @@
     <section id="contact" class="contact">
       <h2 class="heading">Contact <span>Me</span></h2>
 
-      <form
-        action="https://formsubmit.co/alfaroraquel558@gmail.com"
-        method="POST"
-      >
-        <div class="input-box">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
+      <form id="form">
+        <div class="field">
+          <label for="from_name">name</label>
+          <input type="text" name="from_name" id="from_name" />
+        </div>
+        <div class="field">
+          <label for="email">email</label>
+          <input type="text" name="email" id="email" />
+        </div>
+        <div class="field">
+          <label for="message">message</label>
+          <input type="text" name="message" id="message" />
         </div>
 
-        <div class="input-box">
-          <input
-            type="text"
-            name="phone"
-            placeholder="Your Number (Optional)"
-          />
-          <input type="text" name="subject" placeholder="Subject" required />
-        </div>
-
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit" class="btn">Send Message</button>
-
-        <!-- Botón para descargar CV -->
+        <input type="submit" id="button" value="Send Email" />
         <a
           target="_blank"
           href="./assets/CV.pdf"
